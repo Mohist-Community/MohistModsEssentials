@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'red.mohsit.mohistmodsessentials'
+version '0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile files('libs/recompiled.jar')
+    compile files('libs/Vault.jar')
+    compile files('libs/Pixelmon-1.12.2-7.1.1-server.jar')
+    compile files('libs/industrialcraft-2-2.8.188-ex112-api.jar')
+}
