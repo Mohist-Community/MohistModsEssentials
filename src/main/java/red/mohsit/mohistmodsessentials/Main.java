@@ -25,17 +25,17 @@ public class Main extends JavaPlugin {
         reloadConfig();
         if (ServerAPI.hasMod("pixelmon")) {
             this.pixelmon = Pixelmon.instance;
-            if (Bukkit.getPluginManager().getPlugin("Vault") != null && getConfig().getBoolean("pixelmon.hookvault", false)){
+            if (ServerAPI.hasPlugin("Vault") && getConfig().getBoolean("pixelmon.hookvault", false)){
                 this.setuppixelmonEconomy();
             }
             Bukkit.getLogger().info("Successful hook pixelmon mod!");
         }
         if (ServerAPI.hasMod("ic2")){
             if(getConfig().getBoolean("ic2.canceledExplosion", true)) {
-                Bukkit.getPluginManager().registerEvents(new ExplosionEvent(), this);
+                ServerAPI.registerBukkitEvents(new ExplosionEvent(), this);
             }
             if(getConfig().getBoolean("ic2.canceledLaserEvent", false)) {
-                Bukkit.getPluginManager().registerEvents(new LaserEvent(), this);
+                ServerAPI.registerBukkitEvents(new LaserEvent(), this);
             }
         }
     }
