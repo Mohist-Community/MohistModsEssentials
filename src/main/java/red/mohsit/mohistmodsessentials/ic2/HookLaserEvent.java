@@ -65,6 +65,7 @@ public class HookLaserEvent implements Listener {
                     if (!((LaserEvent.LaserHitsEntityEvent) event.getEvent()).owner.getBukkitEntity().hasPermission("mme.ic2.laserhitsentity")
                             || Main.plugin.getConfig().getBoolean("ic2.canceled.LaserEvent-HitsEntity", false)) {
                         event.getEvent().setCanceled(true);
+                        return;
                     }
                     PlayerInteractEntityEvent playerInteractEntityEvent = new PlayerInteractEntityEvent((Player) ((LaserEvent.LaserHitsEntityEvent) event.getEvent()).owner.getBukkitEntity(), ((LaserEvent.LaserHitsEntityEvent) event.getEvent()).hitEntity.getBukkitEntity());
                     Bukkit.getPluginManager().callEvent(playerInteractEntityEvent);
