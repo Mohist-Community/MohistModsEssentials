@@ -8,7 +8,7 @@ import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import red.mohist.api.ServerAPI;
 import red.mohsit.mohistmodsessentials.ic2.ExplosionEvent;
-import red.mohsit.mohistmodsessentials.ic2.LaserEvent;
+import red.mohsit.mohistmodsessentials.ic2.HookLaserEvent;
 import red.mohsit.mohistmodsessentials.pixelmon.eco.VaultEcoHookPixelmon;
 
 public class Main extends JavaPlugin {
@@ -31,11 +31,11 @@ public class Main extends JavaPlugin {
             Bukkit.getLogger().info("Successful hook pixelmon mod!");
         }
         if (ServerAPI.hasMod("ic2")){
-            if(getConfig().getBoolean("ic2.canceledExplosion", true)) {
+            if(getConfig().getBoolean("ic2.canceled.Explosion", true)) {
                 ServerAPI.registerBukkitEvents(new ExplosionEvent(), this);
             }
-            if(getConfig().getBoolean("ic2.canceledLaserEvent", false)) {
-                ServerAPI.registerBukkitEvents(new LaserEvent(), this);
+            if(getConfig().getBoolean("ic2.canceled.LaserEvent", false)) {
+                ServerAPI.registerBukkitEvents(new HookLaserEvent(), this);
             }
         }
     }
