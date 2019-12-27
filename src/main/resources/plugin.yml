@@ -1,5 +1,9 @@
 name: MohistModsEssentials
 main: red.mohsit.mohistmodsessentials.Main
-version: 0.1
+version: 0.2
 author: Mohist-Community
 softdepend: [Vault,PlaceholderAPI]
+
+commands:
+  np:
+    description: Command for NyPhysical

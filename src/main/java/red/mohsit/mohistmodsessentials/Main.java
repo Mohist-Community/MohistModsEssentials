@@ -10,6 +10,9 @@ import red.mohist.api.ServerAPI;
 import red.mohsit.mohistmodsessentials.ic2.ExplosionEvent;
 import red.mohsit.mohistmodsessentials.ic2.HookLaserEvent;
 import red.mohsit.mohistmodsessentials.pixelmon.eco.VaultEcoHookPixelmon;
+import red.mohsit.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
+import red.mohsit.mohistmodsessentials.pixelmon.nyphysical.NyPhysicalPlayerData;
+import red.mohsit.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
 
 public class Main extends JavaPlugin {
 
@@ -28,10 +31,11 @@ public class Main extends JavaPlugin {
             if (ServerAPI.hasPlugin("Vault") && getConfig().getBoolean("pixelmon.hookvault", false)){
                 this.setuppixelmonEconomy();
             }
+            new NyPhysical(this);
             Bukkit.getLogger().info("Successful hook pixelmon mod!");
         }
         if (ServerAPI.hasMod("ic2")){
-            if(getConfig().getBoolean("ic2.canceled.Explosion", true)) {
+            if(getConfig().getBoolean("ic2.canceled.Explosion", false)) {
                 ServerAPI.registerBukkitEvents(new ExplosionEvent(), this);
             }
             if(getConfig().getBoolean("ic2.canceled.LaserEvent", false)) {
@@ -43,5 +47,12 @@ public class Main extends JavaPlugin {
     private void setuppixelmonEconomy() {
         Vault vault = (Vault) Bukkit.getPluginManager().getPlugin("Vault");
         Bukkit.getServicesManager().register(Economy.class, new VaultEcoHookPixelmon(), vault, ServicePriority.Highest);
+    }
+
+    public void onDisable() {
+        for (NyPhysicalPlayerData pd : NyPhysical.pds.values()) {
+            pd.save();
+        }
+        NyPhysicalPAPI.unhook();
     }
 }

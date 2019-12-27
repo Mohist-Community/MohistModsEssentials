@@ -18,4 +18,5 @@ dependencies {
     compile files('libs/Vault.jar')
     compile files('libs/Pixelmon-1.12.2-7.1.1-server.jar')
     compile files('libs/industrialcraft-2-2.8.188-ex112-api.jar')
+    compile files('libs/PlaceholderAPI-2.10.4.jar')
 }
