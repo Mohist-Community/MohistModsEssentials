@@ -1,6 +1,5 @@
 package red.mohsit.mohistmodsessentials.pixelmon.nyphysical;
 
-import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import red.mohsit.mohistmodsessentials.Main;
 import red.mohsit.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
 
@@ -25,17 +23,18 @@ public class NyPhysical{
     public static boolean can;
     public Main plugin;
     public static String prefix;
+    public static String key = "pixelmon.nyphysical.";
 
     public NyPhysical(Main main){
         main = plugin;
-        prefix = plugin.getConfig().getString("message.prefix").replace("&", "§");
+        prefix = plugin.getConfig().getString(key + "message.prefix").replace("&", "§");
         pds.clear();
         for (final Player p : Bukkit.getOnlinePlayers()) {
             pds.put(p.getName(), new NyPhysicalPlayerData(p.getName()));
         }
         Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
             this.checkTime();
-            if (time < plugin.getConfig().getInt("add-time")) {
+            if (time < plugin.getConfig().getInt(key + "add-time")) {
                 ++time;
             }
             else {
@@ -46,7 +45,7 @@ public class NyPhysical{
             }
         }, 20L, 20L);
         NyPhysicalPAPI.hook();
-        Bukkit.getPluginManager().registerEvents((Listener) this, plugin);
+        Bukkit.getPluginManager().registerEvents(new NyPhysicalListener(), plugin);
         plugin.getCommand("np").setExecutor(new NyPhysicalCommand());
     }
 
@@ -56,8 +55,8 @@ public class NyPhysical{
         try {
             Date now = new Date(System.currentTimeMillis());
             String nowData = day.format(now);
-            String[] oneTime = plugin.getConfig().getString("time.one").split("-");
-            String[] twoTime = plugin.getConfig().getString("time.two").split("-");
+            String[] oneTime = plugin.getConfig().getString(key + "time.one").split("-");
+            String[] twoTime = plugin.getConfig().getString(key + "time.two").split("-");
             Date date = sdf.parse(nowData + oneTime[0]);
             Date date2 = sdf.parse(nowData + oneTime[1]);
             Date date3 = sdf.parse(nowData + twoTime[0]);
@@ -67,7 +66,7 @@ public class NyPhysical{
             }
             else {
                 can = false;
-                this.players.clear();
+                players.clear();
             }
         }
         catch (ParseException e) {

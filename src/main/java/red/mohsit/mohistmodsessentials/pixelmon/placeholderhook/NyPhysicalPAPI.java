@@ -23,7 +23,7 @@ public class NyPhysicalPAPI extends PlaceholderHook
                 return NyPhysical.pds.get(player.getName()).getNP() + "";
             }
             if (s.equals("time")) {
-                return Main.plugin.getConfig().getInt("add-time") - NyPhysical.time + "";
+                return Main.plugin.getConfig().getInt(NyPhysical.key + "add-time") - NyPhysical.time + "";
             }
             if (s.equals("st")) {
                 return NyPhysical.time + "";

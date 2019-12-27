@@ -1,6 +1,5 @@
 package red.mohsit.mohistmodsessentials.pixelmon.nyphysical;
 
-import com.pixelmonmod.pixelmon.storage.playerData.PlayerData;
 import java.util.ArrayList;
 import java.util.List;
 import org.bukkit.Bukkit;
@@ -10,7 +9,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import red.mohsit.mohistmodsessentials.Main;
@@ -25,7 +23,7 @@ public class NyPhysicalCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (args.length == 0) {
-                Inventory inv = Bukkit.createInventory(null, 45, Main.plugin.getConfig().getString("inventory.title").replace("&", "§"));
+                Inventory inv = Bukkit.createInventory(null, 45, Main.plugin.getConfig().getString(NyPhysical.key + "inventory.title").replace("&", "§"));
                 int[] slots = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 36, 37, 38, 39, 40, 41, 42, 43, 44 };
                 ItemStack fg = new ItemStack(Material.STAINED_GLASS_PANE, 1);
                 ItemMeta fgim = fg.getItemMeta();
@@ -37,16 +35,16 @@ public class NyPhysicalCommand implements CommandExecutor {
                 ItemStack tl = new ItemStack(Material.DRAGONS_BREATH);
                 ItemMeta im = tl.getItemMeta();
                 List<String> lores = new ArrayList<>();
-                for (String j : Main.plugin.getConfig().getStringList("lore")) {
+                for (String j : Main.plugin.getConfig().getStringList(NyPhysical.key + "lore")) {
                     lores.add(j.replace("&", "§"));
                 }
                 im.setLore(lores);
-                im.setDisplayName(Main.plugin.getConfig().getString("inventory.item-name").replace("&", "§"));
+                im.setDisplayName(Main.plugin.getConfig().getString(NyPhysical.key + "inventory.item-name").replace("&", "§"));
                 tl.setItemMeta(im);
                 inv.setItem(22, tl);
                 ((Player)sender).openInventory(inv);
             }
-            else if (args[0].equalsIgnoreCase("add") && sender.hasPermission("nyphysical.admin")) {
+            else if (args[0].equalsIgnoreCase("add") && sender.hasPermission("mme.nyphysical.admin")) {
                 if (args.length <= 2) {
                     sender.sendMessage(NyPhysical.prefix + "§c请输入玩家名及数量");
                     return false;

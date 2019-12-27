@@ -27,8 +27,8 @@ public class NyPhysicalPlayerData {
         if (!this.f.exists()) {
             try {
                 this.f.createNewFile();
-                this.data.set("NP", Main.plugin.getConfig().getInt("default"));
-                this.data.set("Max", Main.plugin.getConfig().getInt("default"));
+                this.data.set("NP", Main.plugin.getConfig().getInt(NyPhysical.key + "default"));
+                this.data.set("Max", Main.plugin.getConfig().getInt(NyPhysical.key + "default"));
                 this.data.save(this.f);
             }
             catch (IOException e) {
@@ -63,13 +63,6 @@ public class NyPhysicalPlayerData {
     }
 
     public void check() {
-        Player p = this.getPlayer();
-        for (int i = 1; i <= 10; ++i) {
-            String permission = "cz.vip" + i;
-            if (p.hasPermission(permission)) {
-                this.max = Main.plugin.getConfig().getInt("default") + 10 * i;
-            }
-        }
         if (this.np > this.max) {
             this.np = this.max;
         }

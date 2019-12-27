@@ -20,19 +20,19 @@ public class NyPhysicalListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        if (e.getInventory().getTitle().equals(Main.plugin.getConfig().getString("inventory.title").replace("&", "§"))) {
+        if (e.getInventory().getTitle().equals(Main.plugin.getConfig().getString(NyPhysical.key + "inventory.title").replace("&", "§"))) {
             e.setCancelled(true);
             if (e.getSlot() == 22) {
                 if (NyPhysical.can) {
                     if (NyPhysical.pds.containsKey(e.getWhoClicked().getName())) {
                         if (NyPhysical.players.contains(e.getWhoClicked().getName())) {
-                            e.getWhoClicked().sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString("message.get").replace("&", "§"));
+                            e.getWhoClicked().sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString(NyPhysical.key + "message.get").replace("&", "§"));
                             return;
                         }
                         NyPhysical.players.add(e.getWhoClicked().getName());
                         NyPhysical.pds.get(e.getWhoClicked().getName()).addNP(NyPhysical.pds.get(e.getWhoClicked().getName()).getMax());
-                        Bukkit.getServer().broadcastMessage(NyPhysical.prefix + Main.plugin.getConfig().getString("message.broadcast").replace("%player%", e.getWhoClicked().getName()));
-                        e.getWhoClicked().sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString("message.success").replace("&", "§"));
+                        Bukkit.getServer().broadcastMessage(NyPhysical.prefix + Main.plugin.getConfig().getString(NyPhysical.key + "message.broadcast").replace("%player%", e.getWhoClicked().getName()));
+                        e.getWhoClicked().sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString(NyPhysical.key + "message.success").replace("&", "§"));
                     }
                     else {
                         e.getWhoClicked().closeInventory();
@@ -41,7 +41,7 @@ public class NyPhysicalListener implements Listener {
                 }
                 else {
                     e.getWhoClicked().closeInventory();
-                    e.getWhoClicked().sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString("message.usf-time").replace("&", "§"));
+                    e.getWhoClicked().sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString(NyPhysical.key + "message.usf-time").replace("&", "§"));
                 }
             }
         }
@@ -67,7 +67,7 @@ public class NyPhysicalListener implements Listener {
             if (be.bc.getPlayers().size() == 1.0) {
                 String name = be.bc.getPlayers().get(0).player.getDisplayNameString();
                 Player p = Bukkit.getPlayer(name);
-                if (Main.plugin.getConfig().getStringList("worlds").contains(p.getWorld().getName())) {
+                if (Main.plugin.getConfig().getStringList(NyPhysical.key + "worlds").contains(p.getWorld().getName())) {
                     return;
                 }
                 if (NyPhysical.pds.containsKey(name)) {
@@ -78,13 +78,13 @@ public class NyPhysicalListener implements Listener {
                     else {
                         be.setResult(Event.Result.DENY);
                         be.setCanceled(true);
-                        p.sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString("message.lack-phy").replace("&", "§"));
+                        p.sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString(NyPhysical.key + "message.lack-phy").replace("&", "§"));
                     }
                 }
                 else {
                     be.setResult(Event.Result.DENY);
                     be.setCanceled(true);
-                    p.sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString("message.lack-phy").replace("&", "§"));
+                    p.sendMessage(NyPhysical.prefix + Main.plugin.getConfig().getString(NyPhysical.key + "message.lack-phy").replace("&", "§"));
                 }
             }
         }
