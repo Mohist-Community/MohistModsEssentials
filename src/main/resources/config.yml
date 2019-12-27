@@ -1,6 +1,7 @@
 pixelmon:
   hookvault: false
   nyphysical:
+    enable: false
     #玩家默认有多少体力
     default: 20
     lore:

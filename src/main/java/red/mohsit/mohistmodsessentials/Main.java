@@ -31,7 +31,9 @@ public class Main extends JavaPlugin {
             if (ServerAPI.hasPlugin("Vault") && getConfig().getBoolean("pixelmon.hookvault", false)){
                 this.setuppixelmonEconomy();
             }
-            new NyPhysical(this);
+            if (getConfig().getBoolean(NyPhysical.key + "enable", false)) {
+                new NyPhysical(this);
+            }
             Bukkit.getLogger().info("Successful hook pixelmon mod!");
         }
         if (ServerAPI.hasMod("ic2")){
@@ -50,9 +52,11 @@ public class Main extends JavaPlugin {
     }
 
     public void onDisable() {
-        for (NyPhysicalPlayerData pd : NyPhysical.pds.values()) {
-            pd.save();
+        if (getConfig().getBoolean(NyPhysical.key + "enable", false)) {
+            for (NyPhysicalPlayerData pd : NyPhysical.pds.values()) {
+                pd.save();
+            }
+            NyPhysicalPAPI.unhook();
         }
-        NyPhysicalPAPI.unhook();
     }
 }
