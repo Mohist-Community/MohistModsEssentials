@@ -38,7 +38,7 @@ public class HookLaserEvent implements Listener {
                         event.getEvent().setCanceled(true);
                         return;
                     }
-                    Location location = new Location(((LaserEvent.LaserExplodesEvent) event.getEvent()).getWorld().getWorld(), ((LaserEvent.LaserExplodesEvent) event.getEvent()).lasershot.posX, ((LaserEvent.LaserExplodesEvent) event.getEvent()).lasershot.posY, ((LaserEvent.LaserExplodesEvent) event.getEvent()).lasershot.posZ);
+                    Location location = new Location(((LaserEvent.LaserExplodesEvent) event.getEvent()).getWorld().getWorld(), ((LaserEvent.LaserExplodesEvent) event.getEvent()).lasershot.field_70165_t, ((LaserEvent.LaserExplodesEvent) event.getEvent()).lasershot.field_70163_u, ((LaserEvent.LaserExplodesEvent) event.getEvent()).lasershot.field_70161_v);
                     EntityExplodeEvent entityExplodeEvent = new EntityExplodeEvent(new EntityTNTPrimed(((LaserEvent.LaserExplodesEvent) event.getEvent()).getWorld()).getBukkitEntity(), location, new ArrayList(), ((LaserEvent.LaserExplodesEvent) event.getEvent()).explosionPower);
                     Bukkit.getPluginManager().callEvent(entityExplodeEvent);
                     event.getEvent().setCanceled(entityExplodeEvent.isCancelled());
@@ -51,7 +51,7 @@ public class HookLaserEvent implements Listener {
                         event.getEvent().setCanceled(true);
                         return;
                     }
-                    Block block = ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).getWorld().getWorld().getBlockAt(((LaserEvent.LaserHitsBlockEvent) event.getEvent()).pos.getX(), ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).pos.getY(), ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).pos.getZ());
+                    Block block = ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).getWorld().getWorld().getBlockAt(((LaserEvent.LaserHitsBlockEvent) event.getEvent()).pos.func_177958_n(), ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).pos.func_177956_o(), ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).pos.func_177952_p());
                     BlockBreakEvent blockBreakEvent = new BlockBreakEvent(block, (Player) ((LaserEvent.LaserHitsBlockEvent) event.getEvent()).owner.getBukkitEntity());
                     Bukkit.getPluginManager().callEvent(blockBreakEvent);
                     event.getEvent().setCanceled(blockBreakEvent.isCancelled());

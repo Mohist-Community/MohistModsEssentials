@@ -10,6 +10,6 @@ import org.bukkit.OfflinePlayer;
 public class Utils {
 
     public static String replacepapi(OfflinePlayer player, String x) {
-        return PlaceholderAPI.setPlaceholders(player, x.replace("&", "ยง"));
+        return PlaceholderAPI.setPlaceholders(player, x.replace("&", "§"));
     }
 }
