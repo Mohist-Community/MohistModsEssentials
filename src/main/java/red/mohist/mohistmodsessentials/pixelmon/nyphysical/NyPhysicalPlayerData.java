@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials.pixelmon.nyphysical;
+package red.mohist.mohistmodsessentials.pixelmon.nyphysical;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import red.mohsit.mohistmodsessentials.Main;
+import red.mohist.mohistmodsessentials.Main;
 
 /**
  * @author Mgazul

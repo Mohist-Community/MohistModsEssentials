@@ -1,5 +1,5 @@
 name: MohistModsEssentials
-main: red.mohsit.mohistmodsessentials.Main
+main: red.mohist.mohistmodsessentials.Main
 version: 0.2
 author: Mohist-Community
 softdepend: [Vault,PlaceholderAPI]

@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials.pixelmon.nyphysical;
+package red.mohist.mohistmodsessentials.pixelmon.nyphysical;
 
 import com.pixelmonmod.pixelmon.api.events.BattleStartedEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
@@ -10,7 +10,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import red.mohist.api.event.BukkitHookForgeEvent;
-import red.mohsit.mohistmodsessentials.Main;
+import red.mohist.mohistmodsessentials.Main;
 
 /**
  * @author Mgazul

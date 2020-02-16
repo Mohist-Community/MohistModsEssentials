@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials.pixelmon.nyphysical;
+package red.mohist.mohistmodsessentials.pixelmon.nyphysical;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,8 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import red.mohsit.mohistmodsessentials.Main;
-import red.mohsit.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
+import red.mohist.mohistmodsessentials.Main;
+import red.mohist.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
 
 /**
  * @author Mgazul

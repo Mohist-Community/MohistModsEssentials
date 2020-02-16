@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials;
+package red.mohist.mohistmodsessentials;
 
 import com.pixelmonmod.pixelmon.Pixelmon;
 import net.milkbowl.vault.Vault;
@@ -7,12 +7,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import red.mohist.api.ServerAPI;
-import red.mohsit.mohistmodsessentials.ic2.ExplosionEvent;
-import red.mohsit.mohistmodsessentials.ic2.HookLaserEvent;
-import red.mohsit.mohistmodsessentials.pixelmon.eco.VaultEcoHookPixelmon;
-import red.mohsit.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
-import red.mohsit.mohistmodsessentials.pixelmon.nyphysical.NyPhysicalPlayerData;
-import red.mohsit.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
+import red.mohist.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
+import red.mohist.mohistmodsessentials.ic2.ExplosionEvent;
+import red.mohist.mohistmodsessentials.ic2.HookLaserEvent;
+import red.mohist.mohistmodsessentials.pixelmon.eco.VaultEcoHookPixelmon;
+import red.mohist.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
+import red.mohist.mohistmodsessentials.pixelmon.nyphysical.NyPhysicalPlayerData;
 
 public class Main extends JavaPlugin {
 

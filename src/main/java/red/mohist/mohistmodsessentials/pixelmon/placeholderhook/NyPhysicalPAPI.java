@@ -1,10 +1,10 @@
-package red.mohsit.mohistmodsessentials.pixelmon.placeholderhook;
+package red.mohist.mohistmodsessentials.pixelmon.placeholderhook;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.PlaceholderHook;
 import org.bukkit.entity.Player;
-import red.mohsit.mohistmodsessentials.Main;
-import red.mohsit.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
+import red.mohist.mohistmodsessentials.Main;
+import red.mohist.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
 
 /**
  * @author Mgazul

@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials;
+package red.mohist.mohistmodsessentials;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.OfflinePlayer;

@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials.pixelmon.eco;
+package red.mohist.mohistmodsessentials.pixelmon.eco;
 
 import com.pixelmonmod.pixelmon.storage.PlayerPartyStorage;
 import java.util.ArrayList;

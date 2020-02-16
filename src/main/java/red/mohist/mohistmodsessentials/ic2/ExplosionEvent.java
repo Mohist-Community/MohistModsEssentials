@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials.ic2;
+package red.mohist.mohistmodsessentials.ic2;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

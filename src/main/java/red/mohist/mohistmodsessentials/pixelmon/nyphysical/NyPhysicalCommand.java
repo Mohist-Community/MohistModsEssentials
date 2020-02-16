@@ -1,4 +1,4 @@
-package red.mohsit.mohistmodsessentials.pixelmon.nyphysical;
+package red.mohist.mohistmodsessentials.pixelmon.nyphysical;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import red.mohsit.mohistmodsessentials.Main;
+import red.mohist.mohistmodsessentials.Main;
 
 /**
  * @author Mgazul
