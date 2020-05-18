@@ -1,4 +1,4 @@
-package red.mohist.mohistmodsessentials.ic2;
+package red.mohist.mme.ic2;
 
 import ic2.api.event.LaserEvent;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import red.mohist.api.event.BukkitHookForgeEvent;
-import red.mohist.mohistmodsessentials.Main;
+import red.mohist.mme.Main;
 
 /**
  * @author Mgazul

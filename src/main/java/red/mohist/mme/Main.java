@@ -1,4 +1,4 @@
-package red.mohist.mohistmodsessentials;
+package red.mohist.mme;
 
 import com.pixelmonmod.pixelmon.Pixelmon;
 import net.milkbowl.vault.Vault;
@@ -7,10 +7,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import red.mohist.api.ServerAPI;
-import red.mohist.mohistmodsessentials.ic2.ExplosionEvent;
-import red.mohist.mohistmodsessentials.ic2.HookLaserEvent;
-import red.mohist.mohistmodsessentials.pixelmon.eco.VaultEcoHookPixelmon;
-import red.mohist.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
+import red.mohist.mme.ic2.ExplosionEvent;
+import red.mohist.mme.ic2.HookLaserEvent;
+import red.mohist.mme.pixelmon.reforged.eco.VaultEcoHookPixelmon;
+import red.mohist.mme.pixelmon.reforged.papi.PokePapi;
 
 public class Main extends JavaPlugin {
 
@@ -28,6 +28,9 @@ public class Main extends JavaPlugin {
             this.pixelmon = Pixelmon.instance;
             if (ServerAPI.hasPlugin("Vault") && getConfig().getBoolean("pixelmon.hookvault", false)){
                 this.setuppixelmonEconomy();
+            }
+            if (ServerAPI.hasPlugin("PlaceholderAPI") ) {
+                PokePapi.hook();
             }
             Bukkit.getLogger().info("Successful hook pixelmon mod!");
         }
@@ -47,6 +50,5 @@ public class Main extends JavaPlugin {
     }
 
     public void onDisable() {
-        NyPhysicalPAPI.unhook();
     }
 }

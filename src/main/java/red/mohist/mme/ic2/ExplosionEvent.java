@@ -1,4 +1,4 @@
-package red.mohist.mohistmodsessentials.ic2;
+package red.mohist.mme.ic2;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
