@@ -1,38 +1,5 @@
 pixelmon:
   hookvault: false
-  nyphysical:
-    enable: false
-    #玩家默认有多少体力
-    default: 20
-    lore:
-      - "&f"
-      - "&a ▶ &b皮神为各位训练师带来祝福 "
-      - "&a ▶ &b每次领取可恢复满点体力值 "
-      - "&a ▶ &b领取时间: &f12:00-2:00, 18:00-20:00 "
-      - ""
-      - "&e 点击打开领取皮神祝福 "
-      - "&d"
-    #哪些世界不消耗体力值
-    worlds:
-      - "spawn"
-    #每隔多少秒恢复一点
-    add-time: 60
-    message:
-      prefix: "&b体力系统 &f// "
-      get: "&e你领取过皮神祝福咯!"
-      success: "&a成功获取皮神祝福, 恢复满点体力值!"
-      broadcast: "&f%player% 领取了皮神祝福, 按 H 键或输入 /np 领取"
-      reload: "&a插件配置重载完成!"
-      usf-time: "&e皮神祝福时间还未到喔!"
-      lack-phy: "&e你没有体力来发起战斗了！"
-    inventory:
-      title: "&8 ➢ 皮神祝福"
-      item-name: "&6皮神祝福"
-    #每日领取体力的时间段 (每时间段只能领取一次)
-    time:
-      one: "12:00:00-14:00:00"
-      two: "18:00:00-20:00:00"
-
 ic2:
   canceled:
     LaserEvent-Shoot: false

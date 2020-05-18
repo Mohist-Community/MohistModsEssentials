@@ -7,12 +7,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import red.mohist.api.ServerAPI;
-import red.mohist.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
 import red.mohist.mohistmodsessentials.ic2.ExplosionEvent;
 import red.mohist.mohistmodsessentials.ic2.HookLaserEvent;
 import red.mohist.mohistmodsessentials.pixelmon.eco.VaultEcoHookPixelmon;
-import red.mohist.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
-import red.mohist.mohistmodsessentials.pixelmon.nyphysical.NyPhysicalPlayerData;
+import red.mohist.mohistmodsessentials.pixelmon.placeholderhook.NyPhysicalPAPI;
 
 public class Main extends JavaPlugin {
 
@@ -30,9 +28,6 @@ public class Main extends JavaPlugin {
             this.pixelmon = Pixelmon.instance;
             if (ServerAPI.hasPlugin("Vault") && getConfig().getBoolean("pixelmon.hookvault", false)){
                 this.setuppixelmonEconomy();
-            }
-            if (getConfig().getBoolean(NyPhysical.key + "enable", false)) {
-                new NyPhysical(this);
             }
             Bukkit.getLogger().info("Successful hook pixelmon mod!");
         }
@@ -52,11 +47,6 @@ public class Main extends JavaPlugin {
     }
 
     public void onDisable() {
-        if (getConfig().getBoolean(NyPhysical.key + "enable", false)) {
-            for (NyPhysicalPlayerData pd : NyPhysical.pds.values()) {
-                pd.save();
-            }
-            NyPhysicalPAPI.unhook();
-        }
+        NyPhysicalPAPI.unhook();
     }
 }

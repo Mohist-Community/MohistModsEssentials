@@ -3,8 +3,6 @@ package red.mohist.mohistmodsessentials.pixelmon.placeholderhook;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.PlaceholderHook;
 import org.bukkit.entity.Player;
-import red.mohist.mohistmodsessentials.Main;
-import red.mohist.mohistmodsessentials.pixelmon.nyphysical.NyPhysical;
 
 /**
  * @author Mgazul
@@ -15,28 +13,6 @@ public class NyPhysicalPAPI extends PlaceholderHook
     private static String hook_name = "mme";
 
     public String onPlaceholderRequest(Player player, String s) {
-        if (NyPhysical.pds.containsKey(player.getName())) {
-            if (s.equals("max")) {
-                return NyPhysical.pds.get(player.getName()).getMax() + "";
-            }
-            if (s.equals("np")) {
-                return NyPhysical.pds.get(player.getName()).getNP() + "";
-            }
-            if (s.equals("time")) {
-                return Main.plugin.getConfig().getInt(NyPhysical.key + "add-time") - NyPhysical.time + "";
-            }
-            if (s.equals("st")) {
-                return NyPhysical.time + "";
-            }
-            if (s.equals("status")) {
-                int max = NyPhysical.pds.get(player.getName()).getMax();
-                int np = NyPhysical.pds.get(player.getName()).getNP();
-                if (np >= max) {
-                    return "已满值";
-                }
-                return "恢复中";
-            }
-        }
         return "0";
     }
 
