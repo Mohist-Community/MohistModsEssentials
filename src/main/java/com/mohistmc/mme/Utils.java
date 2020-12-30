@@ -1,4 +1,4 @@
-package red.mohist.mme;
+package com.mohistmc.mme;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.OfflinePlayer;

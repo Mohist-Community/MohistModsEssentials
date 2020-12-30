@@ -1,9 +1,9 @@
-package red.mohist.mme.pixelmon.reforged.papi;
+package com.mohistmc.mme.pixelmon.reforged.papi;
 
+import com.mohistmc.util.NumberUtils;
 import com.pixelmonmod.pixelmon.Pixelmon;
 import java.util.UUID;
 import org.bukkit.entity.Player;
-import red.mohist.util.NumberUtils;
 
 /**
  * @author Mgazul

@@ -1,4 +1,4 @@
-package red.mohist.mme.pixelmon.reforged.eco;
+package com.mohistmc.mme.pixelmon.reforged.eco;
 
 import com.pixelmonmod.pixelmon.Pixelmon;
 import com.pixelmonmod.pixelmon.api.events.EconomyEvent;

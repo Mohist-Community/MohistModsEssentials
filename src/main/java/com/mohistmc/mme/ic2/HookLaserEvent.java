@@ -1,5 +1,7 @@
-package red.mohist.mme.ic2;
+package com.mohistmc.mme.ic2;
 
+import com.mohistmc.api.event.BukkitHookForgeEvent;
+import com.mohistmc.mme.Main;
 import ic2.api.event.LaserEvent;
 import java.util.ArrayList;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -13,8 +15,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import red.mohist.api.event.BukkitHookForgeEvent;
-import red.mohist.mme.Main;
 
 /**
  * @author Mgazul

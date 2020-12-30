@@ -1,8 +1,8 @@
-package red.mohist.mme.ic2;
+package com.mohistmc.mme.ic2;
 
+import com.mohistmc.api.event.BukkitHookForgeEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import red.mohist.api.event.BukkitHookForgeEvent;
 
 /**
  * @author Mgazul
